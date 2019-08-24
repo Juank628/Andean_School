@@ -1,0 +1,288 @@
+/*general*/
+
+html,
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.7em;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  padding-bottom: 20px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+hr {
+  width: 100px;
+  margin-right: auto;
+  border-color: #81ca00;
+}
+
+/************************utilities************************/
+.h2-white {
+  font-family: "Lato", sans-serif;
+  font-size: 34;
+  font-weight: 300;
+  line-height: 1.5em;
+  color: white;
+}
+
+.h2-black {
+  font-family: "Lato", sans-serif;
+  font-size: 34;
+  font-weight: 300;
+  line-height: 1.5em;
+  color: #011b3a;
+}
+
+.p-white {
+  font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.p-black {
+  font-family: "Lato", sans-serif;
+  color: #595959;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.button-white {
+  background-color: transparent;
+  color: white;
+  width: 200px;
+  padding: 10px;
+  border-style: solid;
+  border-color: white;
+}
+
+.move-left {
+  animation-name: move-left-10em;
+  animation-duration: 2s;
+}
+
+.move-top {
+  animation-name: move-top-10em;
+  animation-duration: 2s;
+}
+
+/************************elements************************/
+
+/*container*/
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: auto;
+}
+
+/*navbar*/
+
+.navbar {
+  height: 90px;
+  padding: 0 15px;
+}
+
+.navbar img {
+  height: 100%;
+  float: left;
+}
+
+.navbar ul {
+  list-style: none;
+  float: right;
+}
+
+.navbar ul li {
+  float: left;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 30px 20px;
+  font-family: Lato;
+  font-size: 16px;
+  color: #011b3a;
+  text-align: center;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.current {
+  background-color: #00aaff;
+  color: white;
+}
+
+/*carousels*/
+
+.home-carousel {
+  background: url("../img/photos/home_carousel_1.jpg") no-repeat center
+    center/cover;
+  height: 100%;
+}
+
+.home-carousel > div {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(1, 27, 58, 0.85);
+  text-align: left;
+  padding: 120px 3px;
+
+  animation-name: slide-right-0-37;
+  animation-duration: 1s;
+}
+
+/*apply-box*/
+
+.apply-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #81ca00;
+  border-top-style: solid;
+  border-top-width: 4px;
+  border-color: #00aaff;
+  margin: 40px 10px;
+}
+
+.apply-box > img {
+  display: none;
+}
+
+.apply-box .box-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.apply-box .box-1-1 {
+  width: 100%;
+  padding: 10px 30px;
+}
+
+.apply-box .box-1-1 h2 {
+  padding-bottom: 0;
+}
+
+.apply-box .box-1-2 {
+  height: 100%;
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/*our school box*/
+
+.our-school-box {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 10px;
+}
+
+.our-school-box div {
+  padding: 10px 10px;
+}
+
+.our-school-box img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+/*******************************keyframes*******************************/
+
+@keyframes slide-right-0-37 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 37%;
+  }
+}
+
+@keyframes move-left-10em {
+  0% {
+    visibility: hidden;
+    transform: translateX(10em);
+  }
+  80% {
+    visibility: hidden;
+    transform: translateX(10em);
+  }
+  100% {
+    visibility: visible;
+    transform: translateX(0em);
+  }
+}
+
+@keyframes move-top-10em {
+  0% {
+    visibility: hidden;
+    transform: translateX(10em);
+  }
+  50% {
+    visibility: hidden;
+    transform: translateY(10em);
+  }
+  100% {
+    visibility: visible;
+    transform: translateY(0em);
+  }
+}
+
+/*********************media queries*********************/
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .home-carousel > div {
+    width: 45%;
+  }
+
+  .apply-box {
+    flex-direction: row;
+    margin: 40px auto;
+  }
+
+  .apply-box > img {
+    display: block;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .apply-box {
+    margin-top: -100px;
+  }
+
+  .apply-box .box-1 {
+    flex-direction: row;
+  }
+
+  .apply-box .box-1-2 {
+    padding: 60px 0px;
+  }
+
+  .our-school-box {
+    flex-direction: row;
+    margin: auto;
+  }
+
+  .our-school-box div {
+    padding-right: 40px;
+  }
+
+  .our-school-box img {
+    max-width: 40%;
+  }
+}
