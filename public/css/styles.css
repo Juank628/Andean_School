@@ -67,6 +67,21 @@ hr {
   padding: 10px;
   border-style: solid;
   border-color: white;
+  cursor: pointer;
+}
+
+.button-white:hover {
+  background-color: white;
+  color: #81ca00;
+}
+
+.icon {
+  margin: 0 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .move-left {
@@ -81,42 +96,69 @@ hr {
 
 /************************elements************************/
 
-/*container*/
+/*containers*/
 
 .container {
-  max-width: 1100px;
-  margin: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+  overflow: auto;
+}
+
+.nav-container {
+  margin-right: 0;
+  margin-left: 0;
   overflow: auto;
 }
 
 /*navbar*/
 
+.nav-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-menu-btn {
+  display: flex; 
+  height: 50px;
+  margin-top: 15px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  display: none;
+}
+
 .navbar {
-  height: 90px;
-  padding: 0 15px;
+  height: 87px;
 }
 
 .navbar img {
   height: 100%;
-  float: left;
-}
-
-.navbar ul {
-  list-style: none;
-  float: right;
+  max-height: 87px;
 }
 
 .navbar ul li {
-  float: left;
+  display: flex;
+  background-color: white
 }
 
 .navbar ul li a {
-  display: block;
   padding: 30px 20px;
   font-family: Lato;
   font-size: 16px;
   color: #011b3a;
   text-align: center;
+  z-index: 7000;
+  width: 100%;
 }
 
 .navbar ul li a:hover,
@@ -153,7 +195,8 @@ hr {
   border-top-style: solid;
   border-top-width: 4px;
   border-color: #00aaff;
-  margin: 40px 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .apply-box > img {
@@ -186,18 +229,37 @@ hr {
 .our-school-box {
   display: flex;
   flex-direction: column;
-  margin: 40px 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .our-school-box div {
   padding: 10px 10px;
 }
-
+ 
 .our-school-box img {
   max-width: 700px;
   width: 100%;
   height: auto;
   margin: auto;
+}
+
+/*contact box*/
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 10px;
+}
+
+.contact-box iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.contact-box .box-1 {
+  display: flex;
+  flex-direction: column;
 }
 
 /*******************************keyframes*******************************/
@@ -261,6 +323,25 @@ hr {
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+  .container, .nav-container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: auto;
+  }
+
+  .nav-row {
+    flex-direction: row;
+  }
+
+  .nav-menu-btn { 
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
   .apply-box {
     margin-top: -100px;
   }
@@ -284,5 +365,13 @@ hr {
 
   .our-school-box img {
     max-width: 40%;
+  }
+
+  .contact-box {
+    flex-direction: row;
+  }
+
+  .contact-box iframe {
+    width: 60%;
   }
 }
