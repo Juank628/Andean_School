@@ -102,6 +102,48 @@ hr {
   animation-duration: 1s;
 }
 
+.selector-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 10px;
+  background-color: gray;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.selector-circle:hover {
+  transform: scale(1.5);
+  background-color: #81ca00;
+}
+
+.selector-circle-active {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 10px;
+  background-color: #81ca00;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.inline-selector {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
 /************************elements************************/
 
 /*containers*/
@@ -284,15 +326,16 @@ hr {
 
 .news-box {
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
-  margin: 40px 10px;
+  overflow-x: hidden;
 }
 
 .news-card {
-  width: 90%;
-  max-width: 350px;
-  margin: 0 10px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  max-width: 380px;
+  margin: 25px 10px 0 10px;
 }
 
 .news-card img {
@@ -303,9 +346,11 @@ hr {
 
 .news-card-text {
   width: 80%;
-  margin: auto;
   padding: 10px;
   transform: translateY(-40px);
+  margin-bottom: -40px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: white;
   border-bottom: solid 3px #81ca00
 }
@@ -323,11 +368,6 @@ hr {
   font-weight: 400;
   color: #999;
 }
-
-.card-2, .card-3 {
-  display: none;
-}
-
 
 /*******************************keyframes*******************************/
 
@@ -395,14 +435,6 @@ hr {
   .apply-box > img {
     display: block;
   }
-
-  .news-box {
-    justify-content: space-around;
-  }
-
-  .card-2 {
-    display: flex;
-  }
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -461,8 +493,12 @@ hr {
     max-width: 40%;
   }
 
-  .card-3 {
-    display: flex;
+  .news-box {
+    justify-content: space-between;
+  }
+
+  .news-card {
+    width: 30%;
   }
 
   .contact-box {

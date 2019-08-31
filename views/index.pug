@@ -23,27 +23,31 @@ block content
         h2(class="h2-black ml-10") Noticias
         hr(class="ml-10")
         div(class="news-box")
-            div(class="news-card card-1")
+            div(class="news-card" id="card_1")
                 a(href="#")
                     div
                         img(src="img/photos/news/news_01_00.png")
                     div(class="news-card-text")
                         h3 Inicio de matricula - año escolar 2020
                         span Diciembre 01, 2019
-            div(class="news-card card-2")
+            div(class="news-card" id="card_2")
                 a(href="#")
                     div
                         img(src="img/photos/news/news_02_00.jpg")
                     div(class="news-card-text")
                         h3 Inicio de matricula - año escolar 2020
                         span Diciembre 01, 2019
-            div(class="news-card card-3")
+            div(class="news-card" id="card_3")
                 a(href="#")
                     div
                         img(src="img/photos/news/news_03_00.jpg")
                     div(class="news-card-text")
                         h3 Inicio de matricula - año escolar 2020
                         span Diciembre 01, 2019
+        div(class="inline-selector")
+            div(class="selector-circle" id="selector_1")
+            div(class="selector-circle" id="selector_2")
+            div(class="selector-circle" id="selector_3")
     section(class="container")
         h2(class="h2-black ml-10") Nuestra Ubicación
         hr(class="ml-10")
@@ -56,3 +60,4 @@ block content
                 div(class="row")
                     img(class="icon" src="img/icons/email.svg")
                     p(class="p-black") informes@losandes.com
+    script(src="js/home.js")
