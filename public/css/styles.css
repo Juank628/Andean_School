@@ -79,6 +79,14 @@ hr {
   margin: 0 10px;
 }
 
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -86,12 +94,12 @@ hr {
 
 .move-left {
   animation-name: move-left-10em;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 .move-top {
   animation-name: move-top-10em;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 /************************elements************************/
@@ -137,6 +145,14 @@ hr {
   display: none;
 }
 
+.nav-menu-hidden {
+  display: none
+}
+
+.nav-menu-show {
+  display: flex;
+}
+
 .navbar {
   height: 87px;
 }
@@ -173,17 +189,19 @@ hr {
   background: url("../img/photos/home_carousel_1.jpg") no-repeat center
     center/cover;
   height: 100%;
+  max-height: 470px;
 }
 
 .home-carousel > div {
   height: 100%;
+  max-height: 470px;
   width: 100%;
   background-color: rgba(1, 27, 58, 0.85);
   text-align: left;
   padding: 120px 3px;
 
-  animation-name: slide-right-0-37;
-  animation-duration: 1s;
+  animation-name: slide-right;
+  animation-duration: 700ms;
 }
 
 /*apply-box*/
@@ -262,14 +280,63 @@ hr {
   flex-direction: column;
 }
 
+/*news box*/
+
+.news-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px 10px;
+}
+
+.news-card {
+  width: 90%;
+  max-width: 350px;
+  margin: 0 10px;
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.news-card-text {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  transform: translateY(-40px);
+  background-color: white;
+  border-bottom: solid 3px #81ca00
+}
+
+.news-card-text h3 {
+  font-family: "Lato";
+  font-size: 18px;
+  font-weight: 400;
+  color: #011b3a;
+}
+
+.news-card-text span {
+  font-family: "Lato";
+  font-size: 13px;
+  font-weight: 400;
+  color: #999;
+}
+
+.card-2, .card-3 {
+  display: none;
+}
+
+
 /*******************************keyframes*******************************/
 
-@keyframes slide-right-0-37 {
+@keyframes slide-right {
   from {
     width: 0;
   }
   to {
-    width: 37%;
+    width: 100%;
   }
 }
 
@@ -307,6 +374,15 @@ hr {
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+  @keyframes slide-right {
+    from {
+      width: 0;
+    }
+    to {
+      width: 45%;
+    }
+  }
+
   .home-carousel > div {
     width: 45%;
   }
@@ -319,13 +395,22 @@ hr {
   .apply-box > img {
     display: block;
   }
+
+  .news-box {
+    justify-content: space-around;
+  }
+
+  .card-2 {
+    display: flex;
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
   .container, .nav-container {
     max-width: 1100px;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
     overflow: auto;
   }
 
@@ -342,6 +427,15 @@ hr {
     flex-direction: row;
   }
 
+  .home-carousel {
+    max-height: 600px;
+  }
+
+  .home-carousel > div {
+    max-height: 600px;
+
+  }
+
   .apply-box {
     margin-top: -100px;
   }
@@ -356,7 +450,7 @@ hr {
 
   .our-school-box {
     flex-direction: row;
-    margin: auto;
+    margin-top: 25px;
   }
 
   .our-school-box div {
@@ -365,6 +459,10 @@ hr {
 
   .our-school-box img {
     max-width: 40%;
+  }
+
+  .card-3 {
+    display: flex;
   }
 
   .contact-box {
